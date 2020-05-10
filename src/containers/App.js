@@ -9,11 +9,12 @@ class App extends Component {
     super()
     this.state = {
       robots: [],
-      searchField: ''
+      searchfield: ''
     }
   }
 
   componentDidMount() {
+    // console.log(this.props.store.getState())
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response=> response.json())
       .then(users => {this.setState({ robots: users})});
